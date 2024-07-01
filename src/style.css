@@ -371,3 +371,9 @@ a:focus {
   background-color: var(--textTitle);
   color: var(--bg);
 }
+.gatsby-resp-image-figcaption {
+  font-size: 0.9em;
+  color: #555;
+  text-align: center;
+  margin-top: 0.5em;
+}
