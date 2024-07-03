@@ -13,6 +13,19 @@ module.exports = {
     "gatsby-plugin-dark-mode",
     `gatsby-plugin-image`,
     {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-code-titles",
+            options: {
+              className: "your-custom-class-name",
+            },
+          }, // IMPORTANT: this must be ahead of other plugins that use code blocks
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

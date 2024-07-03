@@ -1,7 +1,7 @@
 ---
-title: about isomorphic
+title: Isomorphic
 date: "2024-04-06T22:12:03.284Z"
-description: ""
+description: "서버와 더 가까워지기"
 ---
 
 <!-- CSR에 열광하던 시기를 지나 다시 SSR을 위해 다양한 프레임워크에서 변화가 일어나고 있다.
@@ -42,12 +42,14 @@ app.tsx 와 index.tsx 를 작성해준다.
 
 index.tsx
 
-    import ReactDOM from 'react-dom';
-    import React from 'react';
-    import App from './App';
-    const rootElement = document.getElementById('root');
+```javascript
+import ReactDOM from "react-dom"
+import React from "react"
+import App from "./App"
+const rootElement = document.getElementById("root")
 
-    ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<App />, rootElement)
+```
 
 tsconfig
 
@@ -79,7 +81,7 @@ babel은 기본적으로 es모듈 구문을 처리하도록 설계되어 있다.
 물론 babel.config.json 에서도 @babel/preset-typescript 를 사용하여
 타입스크립트를 처리하도록 설정해준다.
 
-```javascript
+```json
 module.exports = {
   presets: [
     "@babel/preset-react",
@@ -210,11 +212,11 @@ memory-fs 를 이용해 번들파일을 디스크가 아닌 메모리에 저장�
 
 `webpack-hot-middleware(WHM)` 변경된 파일정보를 브라우저에 갱신시킨다
 
-###### 1. 파일 변경
+1. 파일 변경
 
-###### 2. WDM 이 메모리에 파일 변경점을 메모리에 저장, 개발 서버에 빠르게 제공
+2. WDM 이 메모리에 파일 변경점을 메모리에 저장, 개발 서버에 빠르게 제공
 
-###### 3. WHM 가 변경된 모듈을 브라우저에 제공
+3. WHM 가 변경된 모듈을 브라우저에 제공
 
 server.tsx
 
@@ -436,6 +438,6 @@ entry: [hotMiddlewareScript, "./src/index.tsx"],
 
 초기 로드시 CSR 에서는 빈껍데기인 div 태그만 보이고
 SSR 에서는 헤더가 잘 노출된다.<br/>
-
 SSR 의 대표적인 장점을 여기서 확인할 수 있다.
-이제 기본적인 구성을 마쳤다.
+이제 기본적인 구성을 마쳤다.<br/>
+이 프로젝트로 다양한것들을 확장해볼 수 있겠다.
